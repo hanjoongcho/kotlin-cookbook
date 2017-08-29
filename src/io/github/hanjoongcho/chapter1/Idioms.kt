@@ -11,7 +11,7 @@ data class Customer(val name: String, val email: String) {
 fun main(args: Array<String>) {
 
     // Creating DTOs (POJOs/POCOs)
-    var customer = Customer("aaa", "bbb")
+    var customer = Customer("Hanjoong Cho", "hanjoongcho@test.com")
     println(customer.name)
     println(customer.email)
 
