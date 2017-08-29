@@ -16,6 +16,7 @@ kotlin-cookbook
                     Packages.kt
                     ReturnsAndJumps.kt
 ```
-- [BasicSyntax](https://github.com/hanjoongcho/kotlin-cookbook/blob/master/src/io/github/hanjoongcho/chapter1/BasicSyntax.kt)
+- [Basic Syntax](https://github.com/hanjoongcho/kotlin-cookbook/blob/master/src/io/github/hanjoongcho/chapter1/BasicSyntax.kt)
 - [Idioms](https://github.com/hanjoongcho/kotlin-cookbook/blob/master/src/io/github/hanjoongcho/chapter1/Idioms.kt)
-- [CodingConventions](https://github.com/hanjoongcho/kotlin-cookbook/blob/master/src/io/github/hanjoongcho/chapter1/CodingConventions.kt)
+- [Coding Conventions](https://github.com/hanjoongcho/kotlin-cookbook/blob/master/src/io/github/hanjoongcho/chapter1/CodingConventions.kt)
+- [Control Flow](https://github.com/hanjoongcho/kotlin-cookbook/blob/master/src/io/github/hanjoongcho/chapter2/ControlFlow.kt)
