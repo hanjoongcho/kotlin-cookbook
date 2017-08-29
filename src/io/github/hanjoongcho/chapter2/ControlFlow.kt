@@ -35,12 +35,10 @@ fun main(args: Array<String>) {
     whenExpression4(3)
     whenExpression4(33)
 
-    // 는 방법도 있습니다.
     // 스마트 캐스트 (smart cast)를 이용하면 값이 특정 데이터 타입인지 확인하고, 추가 검사없이 메서드 및 속성에 액세스 할 수 있습니다.
     println(hasPrefix(6000))
     println(hasPrefix("prefix_test_book"))
 
-    // when can also be used as a replacement for an if-else if chain. If no argument is supplied, the branch conditions are simply boolean expressions, and a branch is executed when its condition is true:
     // when 표현식은 if-else 제어문을 대체 할 수 있습니다.
     // argument 값이 없는경우 분기조건에 boolean 표현식을 사용 할 수 있으며, 표현식의 결과가 true인 경우 분기문이 실행됩니다.
     var SuperMarket = SuperMarket()
@@ -51,7 +49,6 @@ fun main(args: Array<String>) {
     }
 
     // For Loops
-    // for loop iterates through anything that provides an iterator. This is equivalent to the foreach loop in languages like C#. The syntax is as follows:
     // iterator만 제공되면 for 루프를 이용하여 순회가 가능합니다.
     // 이것은 C #과 같은 언어의 foreach 루프와 동일합니다.
     var fruits = listOf("감", "수박", "자두")
@@ -61,7 +58,6 @@ fun main(args: Array<String>) {
     // 인덱스가있는 배열이나 목록을 반복 할 경우 다음과 같이 할 수 있습니다.
     forLoop3(fruits)
 
-    // Alternatively, you can use the withIndex library function
     // withIndex 라이브러리 함수를 이용할수도 있습니다.
     forLoop4(fruits)
 
