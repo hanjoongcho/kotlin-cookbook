@@ -2,24 +2,11 @@ package io.github.hanjoongcho.chapter1
 
 fun main(args: Array<String>) {
 
-    // 정수 파라미터 2개를 받아 정수값을 리턴하는 함수
-    print("sum of 3 and 5 is ")
-    println(sum(3, 5))
-
-    // 추론타입을 리턴하는 함수를 표현식과 함께사용
-    println("sum of 19 and 23 is ${sum(19, 23)}")
-
-    // Unit타입(의미있는 값이 리턴하지 않음?? / kotlin.Unit)을 리턴하는 함수
-    printSum(-1, 8)
-
-    // Unit타입 선언을 생략
-    printSum(-1, 8)
-
     // 한번만 할당가능한(읽기전용) 지역변수 정의
-    defineLocalVariable();
+    defineLocalVariable()
 
     // 여러번 할당가능한 변수 정의
-    defineLocalVariable2();
+    defineLocalVariable2()
 
     // 한줄 주석
     // This is an end-of-line comment
@@ -27,12 +14,6 @@ fun main(args: Array<String>) {
     // 블럭 주석(Java와 달리 Kotlin의 블록 주석은 중첩 될 수 있습니다.)
     /* This is a block comment
        on multiple lines. */
-
-    // string 템플릿
-    stringTemplate();
-
-    // 조건문
-    println("max of 0 and 42 is ${maxOf(0, 42)}")
 
     // null값 할당이 가능한 변수와 null값 체크
     printProduct("6", "7")
@@ -43,11 +24,6 @@ fun main(args: Array<String>) {
     printProduct2("6", "7")
     printProduct2("a", "7")
     printProduct2("99", "b")
-
-    // 타입확인과 자동 형변환
-    printLength("Incomprehensibilities")
-    printLength(1000)
-    printLength(listOf(Any()))
 
     // for 반복문
     val items = listOf("apple", "banana", "kiwi")
@@ -157,6 +133,10 @@ fun stringTemplate() {
     println(s2)
 }
 
+fun simpleStringTemplate(targetString: String): String = "targetString is $targetString"
+
+fun expressionStringTemplate(origin: String, target: String, replacement: String): String = "${origin.replace(target, replacement)}"
+
 fun maxOf(a: Int, b: Int): Int {
     if (a > b) {
         return a
@@ -206,14 +186,11 @@ fun getStringLength(obj: Any): Int? {
         // `obj` is automatically cast to `String` in this branch
         return obj.length
     }
-
     // `obj` is still of type `Any` outside of the type-checked branch
     return null
 }
 
-fun printLength(obj: Any) {
-    println("'$obj' string length is ${getStringLength(obj) ?: "... err, not a string"} ")
-}
+fun getLength(obj: Any): Int = getStringLength(obj) ?: -1
 
 fun describe(obj: Any): String =
         when (obj) {

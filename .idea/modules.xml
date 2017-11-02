@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/kotlin-cookbook.iml" filepath="$PROJECT_DIR$/kotlin-cookbook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-cookbook_main.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-cookbook_main.iml" group="kotlin-cookbook" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-cookbook_test.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-cookbook_test.iml" group="kotlin-cookbook" />
     </modules>
   </component>
 </project>
