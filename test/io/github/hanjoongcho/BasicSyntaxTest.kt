@@ -39,4 +39,101 @@ class BasicSyntaxTest {
         assertEquals(expressionStringTemplate("A A B B C C", "A", "C"), "C C B B C C")
     }
 
+    @Test fun testFitInRange() {
+        // in 연산자를 사용하여 숫자가 범위 내에 있는지 확인
+        assertFalse(fitInRange(5, 7, 4))
+        assertTrue(fitInRange(5, 7, 5))
+        assertTrue(fitInRange(5, 7, 6))
+        assertTrue(fitInRange(5, 7, 7))
+        assertFalse(fitInRange(5, 7, 8))
+    }
+
+    @Test fun testForLoop_01() {
+        // for 반복문
+        val items = listOf("apple", "banana", "kiwi")
+        for (item in items) {
+            assertTrue(item.matches("apple|banana|kiwi".toRegex()))
+        }
+    }
+
+    @Test fun testForLoop_02() {
+        // for 반복문
+        val items = listOf("apple", "banana", "kiwi")
+        for (index in items.indices) {
+            when (index) {
+                0 -> assertEquals(items[index], "apple")
+                1 -> assertEquals(items[index], "banana")
+                2 -> assertEquals(items[index], "kiwi")
+            }
+        }
+    }
+
+    @Test fun testWhileLoop() {
+        val items = listOf("apple", "banana", "kiwi")
+        var index = 0
+        while (index < items.size) {
+            println("item at $index is ${items[index]}")
+            index++
+        }
+        println(index)
+        assertTrue(index == 3)
+    }
+
+
+    @Test fun testRange_01() {
+        val sb = StringBuilder()
+        // IntRange 반복
+        for (x in 1..5) {
+            sb.append(x)
+        }
+        assertEquals(sb.toString(), "12345")
+    }
+
+    @Test fun testRange_02() {
+        val sb = StringBuilder()
+        for (x in 1..10 step 2) {
+            sb.append(x)
+        }
+        assertEquals(sb.toString(), "13579")
+    }
+
+    @Test fun testRange_03() {
+        val sb = StringBuilder()
+        for (x in 9 downTo 0 step 3) {
+            sb.append(x)
+        }
+        assertEquals(sb.toString(), "9630")
+    }
+
+    @Test fun testWhenExpression() {
+        assertEquals(describe(1), "One")
+        assertEquals(describe("Hello"), "Greeting")
+        assertEquals(describe(1000L), "Long")
+        assertEquals(describe("other"), "Unknown")
+    }
+
+    @Test fun tesInOperator() {
+        val items = setOf("apple", "banana", "kiwi")
+        assertTrue("apple" in items)
+        assertTrue("banana" in items)
+        assertFalse("pineapple" in items)
+    }
+
+    @Test fun testFilter() {
+        val fruits = listOf("banana", "avocado", "apple", "kiwi")
+        val list = fruits.filter { item -> item == "apple" }
+        assertEquals(list.first(), "apple")
+    }
+
+    @Test fun testSortBy() {
+        val fruits = listOf("banana", "avocado", "apple", "kiwi")
+        val list = fruits.sortedBy { it }
+        assertEquals(list.first(), "apple")
+    }
+
+    @Test fun testMap() {
+        val fruits = listOf("banana", "avocado", "apple", "kiwi")
+        assertEquals(fruits.map { it.toUpperCase() }.first(), "BANANA")
+    }
+
 }
