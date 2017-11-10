@@ -6,8 +6,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 
+class SimpleService {
+    companion object {
+        val API_URL = "https://api.github.com"
+    }
+}
 
-private val API_URL = "https://api.github.com"
 
 data class Contributor(val login: String, val contributions: Int)
 
@@ -38,7 +42,7 @@ interface GitHub {
 fun getFirstContributorLoginValue(owner: String, repo: String): String {
     // Create a very simple REST adapter which points the GitHub API.
     val retrofit = Retrofit.Builder()
-            .baseUrl(API_URL)
+            .baseUrl(SimpleService.API_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -55,7 +59,7 @@ fun getFirstContributorLoginValue(owner: String, repo: String): String {
 
 fun getLanguage(owner: String, repo: String): String {
     val retrofit = Retrofit.Builder()
-            .baseUrl(API_URL)
+            .baseUrl(SimpleService.API_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     val github = retrofit.create(GitHub::class.java)
@@ -66,7 +70,7 @@ fun getLanguage(owner: String, repo: String): String {
 
 fun getUserInfo(owner: String): String {
     val retrofit = Retrofit.Builder()
-            .baseUrl(API_URL)
+            .baseUrl(SimpleService.API_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     val github = retrofit.create(GitHub::class.java)
